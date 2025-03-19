@@ -9,6 +9,7 @@ Grid Expand is a web application designed to help artists create grid-based draw
 - **Interactive Grid Drawing**: Navigate through grid squares with zoom and rotation capabilities.
 - **Progress Tracking**: Mark completed squares as you work through your drawing.
 - **Project Management**: Save and load projects for continuous work.
+- **Printing Functionality**: Print your grid with visible grid lines and references directly onto paper.
 - **Responsive Design**: Works on both desktop and mobile devices.
 
 ## Getting Started
@@ -73,6 +74,7 @@ The build will be available in the `dist` directory.
    - Click on grid squares to view them in detail
    - Mark squares as completed as you work through your drawing
    - Use zoom and rotation tools to see details more clearly
+   - Print the grid with visible guidelines and reference markers
 
 5. **Save Your Progress**:
    - Save your project to continue working on it later

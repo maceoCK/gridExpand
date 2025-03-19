@@ -67,6 +67,26 @@ The most complex component that:
   - Marking squares as complete
 - Uses HTML Canvas for rendering
 
+### PrintButton (`src/components/PrintButton.tsx`)
+
+- Provides UI for printing configuration options
+- Manages print state and triggers print generation
+- Includes options for customizing the print output:
+  - Toggle visibility of completed squares
+  - Toggle visibility of grid reference labels
+  - Control grid line thickness (0.5-2px)
+  - Adjust grid line opacity (10-80%)
+- Features simple and advanced option views
+
+### PrintableGrid (`src/components/PrintableGrid.tsx`)
+
+- Creates a high-quality canvas rendering for printing
+- Generates customizable grid lines with adjustable opacity and thickness
+- Adds optional grid reference labels (A1, B2, etc.)
+- Shows optional completed square indicators
+- Optimizes output for print media
+- Adds project metadata (title, notes) to the printed output
+
 ### SquarePopup (`src/components/SquarePopup.tsx`)
 
 - Shows a detailed view of a selected grid square
@@ -82,6 +102,11 @@ The most complex component that:
 
 - `saveProjectToFile()`: Exports project data to JSON file
 - `loadProjectFromFile()`: Imports project data from JSON file
+
+### Print Utilities (`src/utils/printUtils.ts`)
+
+- `printElement()`: Prints an HTML element with proper formatting for print media
+- `printCanvas()`: Optimizes and prints a canvas element with print-friendly styles
 
 ## Data Models
 
@@ -141,6 +166,7 @@ interface GridSquare {
    - Interactive grid is displayed over the image
    - User can mark squares as completed
    - Progress is automatically saved to browser storage
+   - Grid can be printed with reference markings and gridlines
 
 ## Project Export/Import
 

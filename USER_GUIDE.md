@@ -67,6 +67,31 @@ Grid drawing is a technique used by artists to accurately transfer an image to p
 
 5. **Fullscreen View**: Click on any square for a fullscreen detailed view.
 
+6. **Print Grid**:
+   - Click the "Print Grid" button in the top navigation bar.
+   - A print options panel will appear with settings:
+     - **Show completed squares**: Toggle whether to include highlighted completed squares in the printout.
+     - **Show grid labels**: Toggle whether to show or hide the grid reference labels (A1, B2, etc.)
+   - Click "Advanced Options" to access additional grid appearance settings:
+     - **Grid Line Thickness**: Adjust how thick or thin the grid lines appear (0.5-2px)
+     - **Grid Line Opacity**: Control the transparency of grid lines (10-80%)
+   - Click "Print Now" to generate a printable version with:
+     - Customized grid lines for accurate transfer to your drawing paper
+     - Optional reference labels to help track your progress
+     - Your project title and notes (if provided)
+   - A print dialog will open allowing you to select your printer and paper settings.
+   - The printed grid can be used as a reference or directly as a template for tracing.
+
+### Printing Tips
+
+- **Paper Size**: Make sure to select the same paper size in your print dialog that you configured in the app settings.
+- **Scale**: Select "Actual size" or "100%" in your print settings for accurate grid measurements.
+- **Quality**: For detailed images, consider using a higher quality print setting.
+- **Grid Appearance**: For the best results when transferring to paper:
+  - Use thinner, fainter lines (30-40% opacity) if you plan to trace over the printout
+  - Use slightly thicker, more visible lines (50-60% opacity) if you're using the printout as a reference
+  - Hide labels if you prefer a cleaner look for your final drawing
+
 ## Saving and Loading Projects
 
 ### Saving Your Project

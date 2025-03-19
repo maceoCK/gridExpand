@@ -9,6 +9,7 @@ import { saveProjectToFile, loadProjectFromFile } from './utils/fileUtils';
 import useStore from './store/useStore';
 import { compressImage } from './utils/imageUtils';
 import ProjectLoader from './components/ProjectLoader';
+import PrintButton from './components/PrintButton';
 
 const App: React.FC = () => {
   const {
@@ -157,12 +158,19 @@ const App: React.FC = () => {
               </button>
             </div>
             {step === 4 && (
-              <button
-                onClick={handleSaveProject}
-                className="px-4 py-2 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded-lg flex items-center gap-2"
-              >
-                <Save size={16} /> Save Project
-              </button>
+              <>
+                <button
+                  onClick={handleSaveProject}
+                  className="px-4 py-2 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded-lg flex items-center gap-2"
+                >
+                  <Save size={16} /> Save Project
+                </button>
+                <PrintButton 
+                  imageUrl={croppedImage!}
+                  settings={settings!}
+                  completedSquares={completedSquares}
+                />
+              </>
             )}
           </div>
         </div>
