@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#222222" />
+  
+  <!-- Grid overlay - subtle background pattern -->
+  <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#5a4d41" stroke-width="1" opacity="0.1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+  
+  <!-- Main Icon - Left Side -->
+  <g transform="translate(150, 165) scale(0.6)">
+    <!-- Grid lines -->
+    <g stroke="#5a4d41" stroke-width="6">
+      <!-- Vertical lines -->
+      <line x1="128" y1="96" x2="128" y2="416" />
+      <line x1="256" y1="96" x2="256" y2="416" />
+      <line x1="384" y1="96" x2="384" y2="416" />
+      <!-- Horizontal lines -->
+      <line x1="96" y1="128" x2="416" y2="128" />
+      <line x1="96" y1="256" x2="416" y2="256" />
+      <line x1="96" y1="384" x2="416" y2="384" />
+    </g>
+    
+    <!-- Border Rectangle -->
+    <rect x="96" y="96" width="320" height="320" stroke="#5a4d41" stroke-width="12" fill="none" rx="5" />
+    
+    <!-- Artist's Pencil/Brush Stroke -->
+    <path d="M128,128 C180,180 200,220 256,256 C320,300 384,340 384,384" 
+          stroke="#a87c50" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          
+    <!-- Grid cell highlight -->
+    <rect x="256" y="128" width="128" height="128" fill="#a87c50" opacity="0.2" />
+  </g>
+  
+  <!-- App Name - Right Side -->
+  <g transform="translate(550, 315)">
+    <text font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="#a87c50">
+      Grid Expand
+    </text>
+    <text font-family="Arial, sans-serif" font-size="36" fill="#a87c50" y="60">
+      Grid Drawing Assistant
+    </text>
+  </g>
+</svg> 
