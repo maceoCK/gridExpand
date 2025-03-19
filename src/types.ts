@@ -8,7 +8,8 @@ export interface GridSettings {
 
 export interface ProjectData {
   settings: GridSettings;
-  imageData: string; // This is the field name used in the save/load functions
+  uploadedImage: string | null;
+  croppedImage: string | null;
   completedSquares: Record<string, boolean>;
 }
 

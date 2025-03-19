@@ -177,13 +177,6 @@ const App: React.FC = () => {
       </div>
 
       <main className="container mx-auto p-4 max-w-4xl">
-        {/* Debug information */}
-        <div className="mb-4 p-2 bg-brown-900 text-xs">
-          Debug: step={step}, settings={settings ? 'yes' : 'no'}, 
-          image={croppedImage ? 'yes' : 'no'}, 
-          squareSize={settings?.squareSize}
-        </div>
-        
         {step === 1 && (
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1">
