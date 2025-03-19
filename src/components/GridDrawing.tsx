@@ -416,65 +416,80 @@ const GridDrawing: React.FC<GridDrawingProps> = ({
       </div>
       
       {isFullscreenOpen && selectedSquare && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
-          <div className="bg-brown-900 p-6 rounded-lg max-w-4xl w-full max-h-screen overflow-auto">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl text-brown-200">
-                Square {selectedSquare.row + 1},{selectedSquare.col + 1}
-              </h3>
-              <div className="flex items-center">
-                <span className="text-brown-300 mr-2">Rotation: {rotation}°</span>
+        <div 
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+          onClick={closeFullscreen}
+        >
+          <div 
+            className="bg-brown-900 p-4 rounded-lg max-w-5xl w-full max-h-[90vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex">
+              {/* Left side - High-quality image */}
+              <div className="flex-1 bg-black p-2 rounded">
+                <img 
+                  src={renderHighQualitySquare() || ''}
+                  alt={`Grid square ${selectedSquare.row + 1},${selectedSquare.col + 1}`}
+                  className="w-full object-contain"
+                />
+              </div>
+              
+              {/* Right side - All controls */}
+              <div className="ml-4 w-44 flex flex-col">
+                {/* Header information */}
+                <div className="mb-4">
+                  <h3 className="text-xl text-brown-200 mb-2">
+                    Square {selectedSquare.row + 1},{selectedSquare.col + 1}
+                  </h3>
+                  <span className="text-brown-300 block mb-3">Rotation: {rotation}°</span>
+                </div>
+
+                {/* Rotation controls */}
+                <div className="space-y-2 mb-6">
+                  <h4 className="text-sm text-brown-300 mb-1">Rotation controls:</h4>
+                  <div className="flex justify-between">
+                    <button
+                      onClick={rotateCounterClockwise}
+                      className="px-2 py-2 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded text-sm flex-1 mr-1"
+                      title="Rotate 90° Counter-Clockwise"
+                    >
+                      ↺ 90°
+                    </button>
+                    <button
+                      onClick={resetRotation}
+                      className="px-2 py-2 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded text-sm flex-1 mx-1"
+                      title="Reset Rotation"
+                    >
+                      Reset
+                    </button>
+                    <button
+                      onClick={rotateClockwise}
+                      className="px-2 py-2 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded text-sm flex-1 ml-1"
+                      title="Rotate 90° Clockwise"
+                    >
+                      ↻ 90°
+                    </button>
+                  </div>
+                </div>
+                
+                {/* Mark Complete button */}
+                <button 
+                  onClick={toggleSquareComplete}
+                  className={`px-2 py-3 ${
+                    completedSquares[selectedSquare.key] 
+                      ? 'bg-red-800 hover:bg-red-700' 
+                      : 'bg-green-800 hover:bg-green-700'
+                  } text-brown-100 rounded mb-6`}
+                >
+                  {completedSquares[selectedSquare.key] ? 'Mark Incomplete' : 'Mark Complete'}
+                </button>
+                
+                {/* Close button at bottom */}
                 <button 
                   onClick={closeFullscreen}
-                  className="px-2 py-1 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded"
+                  className="px-3 py-2 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded mt-auto"
                 >
                   Close
-                </button>
-              </div>
-            </div>
-            
-            <div className="mb-4 bg-black p-2 rounded">
-              {/* High-quality image rendering */}
-              <img 
-                src={renderHighQualitySquare() || ''}
-                alt={`Grid square ${selectedSquare.row + 1},${selectedSquare.col + 1}`}
-                className="w-full"
-              />
-            </div>
-            
-            <div className="flex justify-between">
-              <button 
-                onClick={toggleSquareComplete}
-                className={`px-4 py-2 ${
-                  completedSquares[selectedSquare.key] 
-                    ? 'bg-red-800 hover:bg-red-700' 
-                    : 'bg-green-800 hover:bg-green-700'
-                } text-brown-100 rounded`}
-              >
-                {completedSquares[selectedSquare.key] ? 'Mark Incomplete' : 'Mark Complete'}
-              </button>
-              
-              <div className="flex space-x-2">
-                <button
-                  onClick={rotateCounterClockwise}
-                  className="px-3 py-1 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded"
-                  title="Rotate 90° Counter-Clockwise"
-                >
-                  ↺ 90°
-                </button>
-                <button
-                  onClick={resetRotation}
-                  className="px-3 py-1 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded"
-                  title="Reset Rotation"
-                >
-                  Reset
-                </button>
-                <button
-                  onClick={rotateClockwise}
-                  className="px-3 py-1 bg-brown-800 hover:bg-brown-700 text-brown-100 rounded"
-                  title="Rotate 90° Clockwise"
-                >
-                  ↻ 90°
                 </button>
               </div>
             </div>
