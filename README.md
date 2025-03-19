@@ -88,6 +88,7 @@ The build will be available in the `dist` directory.
 - **TailwindCSS**: Styling
 - **Vite**: Build tool and development server
 - **React Image Crop**: Image cropping functionality
+- **Vercel Analytics**: Privacy-focused usage analytics
 
 ## Contributing
 

@@ -182,6 +182,17 @@ Projects are serialized to JSON format containing:
 - **Canvas Rendering**: Uses HTML Canvas for efficient grid rendering
 - **Lazy Loading**: Components are only rendered when needed based on the current step
 
+## Analytics
+
+The application uses Vercel Web Analytics to collect anonymous usage data:
+
+- **Visitor Tracking**: Counts unique visitors to the application
+- **Page Views**: Tracks page views and navigation patterns
+- **Privacy Focused**: Collects only essential metrics with no personally identifiable information
+- **Implementation**: Uses the `<Analytics />` React component from `@vercel/analytics`
+
+This helps improve the application by providing insights into how users interact with it, without compromising privacy.
+
 ## Browser Compatibility
 
 The application is designed to work in modern browsers with these requirements:

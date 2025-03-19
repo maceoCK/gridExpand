@@ -10,6 +10,7 @@ import useStore from './store/useStore';
 import { compressImage } from './utils/imageUtils';
 import ProjectLoader from './components/ProjectLoader';
 import PrintButton from './components/PrintButton';
+import { Analytics } from "@vercel/analytics/react";
 
 const App: React.FC = () => {
   const {
@@ -219,6 +220,7 @@ const App: React.FC = () => {
           />
         )}
       </main>
+      <Analytics />
     </div>
   );
 }
